@@ -1,5 +1,6 @@
 <%@ page import="packModel.Invoice" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
@@ -8,7 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/style.css">
-    <title>Invoice List</title>
+    <title>Invoices List</title>
 </head>
 <body>
 <jsp:include page="/navigator.jsp"></jsp:include>
@@ -29,7 +30,8 @@
     <c:forEach var="invoice" items="${requestScope.lista_invoices_z_bazy_danych}">
         <tr>
             <td>${invoice.getId()}</td>
-            <td>${invoice.getDateOfCreation()}</td>
+            <%--<td>${invoice.getDateOfCreation()}</td>--%>
+            <td>${invoice.getDateOfCreation().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
             <td>${invoice.getClientName()}</td>
             <td>${invoice.isIfPaid()}</td>
             <td>${invoice.getDateOfRelease()}</td>

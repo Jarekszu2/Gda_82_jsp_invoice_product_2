@@ -17,7 +17,7 @@ public class Product implements IbaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private double price;
+    private int price;
 
     @Formula(value = "(case when (taxType='PRODUCT') then (price*0.23) when (taxType='SERVICE') then (price*0.08) end)")
     private double tax;
@@ -30,4 +30,11 @@ public class Product implements IbaseEntity {
     @ToString.Exclude
     @ManyToOne()
     private Invoice invoice;
+
+    public Product(String name, int price, TaxType taxType, int stock) {
+        this.name = name;
+        this.price = price;
+        this.taxType = taxType;
+        this.stock = stock;
+    }
 }

@@ -5,6 +5,7 @@ import packDatabse.EntityDao;
 import packModel.Invoice;
 
 import java.util.List;
+import java.util.Optional;
 
 public class InvoiceService {
     private EntityDao entityDao = new EntityDao();
@@ -21,7 +22,7 @@ public class InvoiceService {
         entityDao.saveOrUpdate(new Invoice(invoice_clientName, invoice_clientNip, invoice_clientAddress));
     }
 
-//    public void ccc(Invoice invoice) {
-//        invoice.
-//    }
+    public Optional<Invoice> getOptionalInvoiceById(Long invoiceId) {
+        return entityDao.getById(Invoice.class, invoiceId);
+    }
 }
