@@ -17,7 +17,7 @@ public class ProductService {
         return entityDao.getAll(Product.class);
     }
 
-    public void addProduct(Invoice invoice, String productName, int productPrice, String productTaxType, int productStock) {
+    public void addProduct(Invoice invoice, String productName, double productPrice, String productTaxType, int productStock) {
         TaxType taxType = TaxType.valueOf(productTaxType);
         Product product = new Product(productName, productPrice, taxType, productStock);
         product.setInvoice(invoice);

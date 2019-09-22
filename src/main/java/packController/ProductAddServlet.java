@@ -22,7 +22,7 @@ public class ProductAddServlet extends HttpServlet {
         // pobieram invoiceId jako rezultat wybrania pozycji: Add product, czyli href: /product-add w invoice-list.jsp
         Long longInvoiceId = Long.parseLong(req.getParameter("invoiceId"));
         // nadaję nazwę (do pobrania w product-add.jsp) i ustawiam jako request
-        req.setAttribute("invoice_choosen_from_list", longInvoiceId);
+        req.setAttribute("id_invoice_choosen_from_list", longInvoiceId);
         // ładuję plik (product-add.jsp) i przekierowuję tam req (wysyłam request do jsp)
         req.getRequestDispatcher("/product-add.jsp").forward(req, resp);
     }
@@ -39,7 +39,7 @@ public class ProductAddServlet extends HttpServlet {
 
             // wyciągamy dane z product-add.jsp
             String productName = req.getParameter("product_name");
-            int productPrice = Integer.parseInt(req.getParameter("product_price"));
+            double productPrice = Double.parseDouble(req.getParameter("product_price"));
             String productTaxType = req.getParameter("tax_type");
             int productStock = Integer.parseInt(req.getParameter("product_stock"));
 
@@ -47,7 +47,7 @@ public class ProductAddServlet extends HttpServlet {
             productService.addProduct(invoice, productName, productPrice, productTaxType, productStock);
 
             // przekierowujemy się na adres: invoice-list
-            resp.sendRedirect("/invoice-list");
+            resp.sendRedirect("/product-list");
         }
     }
 }

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 
@@ -32,6 +33,7 @@ public class Invoice implements IbaseEntity {
     private Double billValue;
 //    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "invoice", fetch = FetchType.EAGER)
+    @Cascade(value = {org.hibernate.annotations.CascadeType.REMOVE})
     private List<Product> products;
     @Column(nullable = false, length = 10)
     private int clientsNip;
@@ -39,6 +41,14 @@ public class Invoice implements IbaseEntity {
     private String clientsAddress;
 
     public Invoice(String clientName, int clientsNip, String clientsAddress) {
+        this.clientName = clientName;
+        this.clientsNip = clientsNip;
+        this.clientsAddress = clientsAddress;
+    }
+
+    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, int clientsNip, String clientsAddress) {
+        this.id = id;
+        this.dateOfCreation = dateOfCreation;
         this.clientName = clientName;
         this.clientsNip = clientsNip;
         this.clientsAddress = clientsAddress;

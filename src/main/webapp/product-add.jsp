@@ -19,7 +19,7 @@
 
 <form action="/product-add" method="post">
     <br/>
-    <input type="hidden" name="invoice_to_whom_i_sholud_give_product_to" value="${requestScope.invoiceId}">
+    <input type="hidden" name="invoice_to_whom_i_sholud_give_product_to" value="${requestScope.id_invoice_choosen_from_list}">
     <br/>
     <br/>
     Product name: <input type="text" name="product_name">
@@ -27,9 +27,6 @@
     <br/>
     Product price: <input type="number" name="product_price">
     <br/>
-    <%--<br/>--%>
-    <%--Tax: <input type="number" name="tax_tax">--%>
-    <%--<br/>--%>
     <br/>
     Tax type: <select name="tax_type">
     <option value="PRODUCT">Product</option>

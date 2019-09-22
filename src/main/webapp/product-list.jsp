@@ -21,7 +21,7 @@
 <body>
 <jsp:include page="/navigator.jsp"></jsp:include>
 
-<table style="width: 80%">
+<table style="width: 60%">
     <tr>
         <th>Id.</th>
         <th>Name</th>
@@ -29,7 +29,6 @@
         <th>Tax</th>
         <th>Tax type</th>
         <th>Stock</th>
-        <th></th>
     </tr>
 
     <c:forEach var="product" items="${requestScope.lista_produktow_z_bazy_danych}">

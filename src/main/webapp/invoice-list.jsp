@@ -22,6 +22,7 @@
         <th>If paid</th>
         <th>Date of release</th>
         <th>Date of payment</th>
+        <th>Bill value</th>
         <th>Client NIP</th>
         <th>Client Address</th>
         <th></th>
@@ -36,16 +37,17 @@
             <td>${invoice.isIfPaid()}</td>
             <td>${invoice.getDateOfRelease()}</td>
             <td>${invoice.getDateOfPayment()}</td>
+            <td>${invoice.getBillValue()}</td>
             <td>${invoice.getClientsNip()}</td>
             <td>${invoice.getClientsAddress()}</td>
             <td>
                 <table>
                     <tr>
                         <td>
-                            <a href="/invoice-delete?invoiceId=${invoice.getId()}">Delete</a>
+                            <a href="/invoice-delete?invoiceId=${invoice.getId()}">Delete invoice</a>
                         </td>
                         <td>
-                            <a href="/invoice-edit?invoiceId=${invoice.getId()}">Edit</a>
+                            <a href="/invoice-edit?invoiceId=${invoice.getId()}">Edit invoice</a>
                         </td>
                         <td>
                             <a href="/product-list?invoiceId=${invoice.getId()}">List products</a>

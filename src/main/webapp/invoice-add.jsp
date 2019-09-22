@@ -21,9 +21,10 @@
 <%-- WSTAW W ACTION WARTOŚĆ : /student-add --%>
 <%-- else --%>
 <%-- WSTAW W ACTION WARTOŚĆ : /student-edit --%>
-<form action="${requestScope.invoiceIdentifier==null ? '/invoice-add' : '/invoice-edit'}" method="post">
+<%--<form action="${requestScope.invoiceId==null ? '/invoice-add' : '/invoice-edit'}" method="post">--%>
+<form action="/invoice-add" method="post">
     <br/>
-    <input type="hidden" name="invoice_id" value="${requestScope.invoiceIdentifier}">
+    <input type="hidden" name="invoice_id" value="${requestScope.invoiceId}">
     Client name: <input type="text" name="invoice_clientName" value="${requestScope.clientName}">
     <br/>
     <br/>
