@@ -35,8 +35,8 @@
             <td>${invoice.getDateOfCreation().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
             <td>${invoice.getClientName()}</td>
             <td>${invoice.isIfPaid()}</td>
-            <td>${invoice.getDateOfRelease()}</td>
-            <td>${invoice.getDateOfPayment()}</td>
+            <td>${invoice.getDateOfRelease().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
+            <td>${invoice.getDateOfPayment().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
             <td>${invoice.getBillValue()}</td>
             <td>${invoice.getClientsNip()}</td>
             <td>${invoice.getClientsAddress()}</td>
@@ -48,6 +48,9 @@
                         </td>
                         <td>
                             <a href="/invoice-edit?invoiceId=${invoice.getId()}">Edit invoice</a>
+                        </td>
+                        <td>
+                            <a href="/invoice-release?invoiceId=${invoice.getId()}">Release invoice</a>
                         </td>
                         <td>
                             <a href="/product-list?invoiceId=${invoice.getId()}">List products</a>

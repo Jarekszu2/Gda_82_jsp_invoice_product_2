@@ -37,4 +37,13 @@ public class Product implements IbaseEntity {
         this.taxType = taxType;
         this.stock = stock;
     }
+
+    public Product(Long id, String name, double price, TaxType taxType, int stock, Invoice invoice) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.taxType = taxType;
+        this.stock = stock;
+        this.invoice = invoice;
+    }
 }

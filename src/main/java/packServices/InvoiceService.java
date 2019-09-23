@@ -27,6 +27,10 @@ public class InvoiceService {
         entityDao.saveOrUpdate(new Invoice(invoice_id, invoice_dateOfCreation, invoice_clientName, invoice_clientNip, invoice_clientAddress));
     }
 
+    public void saveInvoice(Invoice invoice) {
+        entityDao.saveOrUpdate(invoice);
+    }
+
     public Optional<Invoice> getOptionalInvoiceById(Long invoiceId) {
         return entityDao.getById(Invoice.class, invoiceId);
     }

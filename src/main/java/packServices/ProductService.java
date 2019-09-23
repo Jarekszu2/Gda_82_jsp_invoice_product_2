@@ -6,6 +6,7 @@ import packModel.Product;
 import packModel.TaxType;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ProductService {
     private EntityDao entityDao = new EntityDao();
@@ -23,5 +24,17 @@ public class ProductService {
         product.setInvoice(invoice);
 
         entityDao.saveOrUpdate(product);
+    }
+
+    public void updateProduct(Product product) {
+        entityDao.saveOrUpdate(product);
+    }
+
+    public void deleteProduct(Long productId) {
+        entityDao.delete(Product.class, productId);
+    }
+
+    public Optional<Product> getProductById(Long productId) {
+        return entityDao.getById(Product.class, productId);
     }
 }

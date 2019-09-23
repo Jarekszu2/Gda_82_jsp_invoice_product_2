@@ -8,7 +8,7 @@
             <a href="/invoice-add">Dodaj fakturę</a>
         </li>
         <li>
-            <a href="/product-list">Lista  productów</a>
+            <a href="/product-list">Lista  produktów</a>
         </li>
         <li>
             <a href="/">Hallo world</a>

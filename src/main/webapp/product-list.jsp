@@ -39,6 +39,18 @@
             <td>${product.getTax()}</td>
             <td>${product.getTaxType()}</td>
             <td>${product.getStock()}</td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="/product-delete?productId=${product.getId()}">Delete product</a>
+                        </td>
+                        <td>
+                            <a href="/product-edit?productId=${product.getId()}">Edit product</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </c:forEach>
 </table>

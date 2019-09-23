@@ -12,13 +12,13 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-@WebServlet("/invoice-edit")
-public class InvoiceEditServlet extends HttpServlet {
+@WebServlet("/invoice-release")
+public class InvoiceReleaseServlet extends HttpServlet {
     private final InvoiceService invoiceService = new InvoiceService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // pobieram invoiceId jako rezultat wybrania pozycji: Edit invoice, czyli href: /invoice-edit w invoice-list.jsp
+        // pobieram invoiceId jako rezultat wybrania pozycji: Release invoice, czyli href: /invoice-release w invoice-list.jsp
         Long longInvoiceId = Long.parseLong(req.getParameter("invoiceId"));
         // wyszukuję z bazy danych invoice o wybranym id
         Optional<Invoice> optionalInvoice = invoiceService.getOptionalInvoiceById(longInvoiceId);
@@ -26,7 +26,7 @@ public class InvoiceEditServlet extends HttpServlet {
         if (optionalInvoice.isPresent()) {
             Invoice invoice = optionalInvoice.get();
 
-            // ładujemy do /invoice-edit parametry dla invoice
+            // ładujemy do /invoice-release parametry dla invoice
             req.setAttribute("invoiceId", invoice.getId());
             req.setAttribute("invoiceDateOfCreation", invoice.getDateOfCreation());
             req.setAttribute("clientName", invoice.getClientName());
@@ -34,12 +34,8 @@ public class InvoiceEditServlet extends HttpServlet {
             req.setAttribute("clientAddress", invoice.getClientsAddress());
 
             // ładuję plik (invoice-add.jsp) i przekierowuję tam req (wysyłam request do jsp)
-            req.getRequestDispatcher("/invoice-edit.jsp").forward(req, resp);
+            req.getRequestDispatcher("/invoice-release.jsp").forward(req, resp);
         }
-//        else {
-//            // przekierowujemy na dodawanie (bes edycji)
-//            resp.sendRedirect("/invoice-add");
-//        }
     }
 
     @Override
@@ -47,20 +43,25 @@ public class InvoiceEditServlet extends HttpServlet {
         // ustawiamy polskie znaki
         req.setCharacterEncoding("UTF-8");
 
-        // pobieramy dane z invoice-add.jsp
+        // pobieramy dane z invoice-release.jsp
         Long invoice_id = Long.parseLong(req.getParameter("invoice_id"));
-        LocalDateTime localDateTime = LocalDateTime.parse(req.getParameter("invoice_dateOfCreation"));
+        LocalDateTime localDateTime = LocalDateTime.parse(req.getParameter("invoice_dateOfRelease"));
+        LocalDateTime localDateTime2 = LocalDateTime.parse(req.getParameter("invoice_dateOfCreation"));
         String invoice_clientName = req.getParameter("invoice_clientName");
         int invoice_clientNip = Integer.parseInt(req.getParameter("invoice_clientNip"));
         String invoice_clientAddress = req.getParameter("invoice_clientAddress");
 
-        Invoice invoice = new Invoice(invoice_id, localDateTime, invoice_clientName, invoice_clientNip, invoice_clientAddress);
+        Invoice invoice = new Invoice(invoice_id, localDateTime2, invoice_clientName, invoice_clientNip, invoice_clientAddress, localDateTime);
 
-        // zapisujemy dane do bazy danych
         invoiceService.saveInvoice(invoice);
-//        invoiceService.updateInvoice(invoice_id, localDateTime, invoice_clientName, invoice_clientNip, invoice_clientAddress);
-
         // przekierowujemy się na adres: student-list
         resp.sendRedirect("/invoice-list");
+
+//        Optional<Invoice> optionalInvoice = invoiceService.getOptionalInvoiceById(invoice_id);
+//        if (optionalInvoice.isPresent()) {
+//            Invoice invoice = optionalInvoice.get();
+//
+//            invoice.setDateOfRelease(localDateTime);
+
     }
 }
