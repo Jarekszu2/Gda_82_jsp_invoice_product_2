@@ -21,10 +21,22 @@ public class ProductAddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // pobieram invoiceId jako rezultat wybrania pozycji: Add product, czyli href: /product-add w invoice-list.jsp
         Long longInvoiceId = Long.parseLong(req.getParameter("invoiceId"));
-        // nadaję nazwę (do pobrania w product-add.jsp) i ustawiam jako request
-        req.setAttribute("id_invoice_choosen_from_list", longInvoiceId);
-        // ładuję plik (product-add.jsp) i przekierowuję tam req (wysyłam request do jsp)
-        req.getRequestDispatcher("/product-add.jsp").forward(req, resp);
+        // sprawdzam czy: w invoice jest dateOfReleased - jeśli tak to blokuję dodawanie produktów
+        Optional<Invoice> optionalInvoice = invoiceService.getOptionalInvoiceById(longInvoiceId);
+        if (optionalInvoice.isPresent()) {
+            Invoice invoice = optionalInvoice.get();
+
+            if (invoice.getDateOfRelease() == null) {
+
+                // nadaję nazwę (do pobrania w product-add.jsp) i ustawiam jako request
+                req.setAttribute("id_invoice_choosen_from_list", longInvoiceId);
+                // ładuję plik (product-add.jsp) i przekierowuję tam req (wysyłam request do jsp)
+                req.getRequestDispatcher("/product-add.jsp").forward(req, resp);
+            } else {
+                // przekierowujemy się na adres: product-blockade
+                resp.sendRedirect("/product-blockade");
+            }
+        }
     }
 
     @Override
