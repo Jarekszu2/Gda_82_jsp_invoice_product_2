@@ -30,7 +30,7 @@
     <br/>
     Tax type: <select name="tax_type">
     <option value="PRODUCT">Product</option>
-    <option value="SEEVICE">Service</option>
+    <option value="SERVICE">Service</option>
     </select>
     <br/>
     <br/>
