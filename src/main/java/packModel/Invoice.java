@@ -46,6 +46,17 @@ public class Invoice implements IbaseEntity {
         this.clientsAddress = clientsAddress;
     }
 
+    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, boolean ifPaid, LocalDateTime dateOfRelease, LocalDateTime dateOfPayment, int clientsNip, String clientsAddress) {
+        this.id = id;
+        this.dateOfCreation = dateOfCreation;
+        this.clientName = clientName;
+        this.ifPaid = ifPaid;
+        this.dateOfRelease = dateOfRelease;
+        this.dateOfPayment = dateOfPayment;
+        this.clientsNip = clientsNip;
+        this.clientsAddress = clientsAddress;
+    }
+
     public Invoice(Long id, LocalDateTime dateOfRelease) {
         this.id = id;
         this.dateOfRelease = dateOfRelease;

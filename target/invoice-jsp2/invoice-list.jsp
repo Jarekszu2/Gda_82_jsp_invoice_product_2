@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="/navigator.jsp"></jsp:include>
 
-<table style="width: 80%">
+<table style="width: 100%">
     <tr>
         <th>Id.</th>
         <th>Date of creation</th>
@@ -52,6 +52,11 @@
                         <td>
                             <a href="/invoice-release?invoiceId=${invoice.getId()}">Release invoice</a>
                         </td>
+                        if (${invoice.isIfPaid()} == false) {
+                        <td>
+                            <a href="/invoice-paid?invoiceId=${invoice.getId()}">Paid invoice</a>
+                        </td>
+                        }
                         <td>
                             <a href="/product-list?invoiceId=${invoice.getId()}">List products</a>
                         </td>
