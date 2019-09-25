@@ -8,29 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b53d1b0e-6a94-48ec-b133-2d4fb4bbdff3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packController/InvoiceAddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packController/InvoiceAddServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packController/InvoiceEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packController/InvoiceEditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packController/InvoiceListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packController/InvoiceListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packController/InvoicePaidServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packController/InvoicePaidServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packController/InvoiceReleaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packController/InvoiceReleaseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packModel/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packModel/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/packServices/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/packServices/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/invoice-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/invoice-add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/invoice-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/invoice-edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/invoice-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/invoice-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/packController/InvoiceAddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/packController/InvoiceAddServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/packController/InvoiceListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/packController/InvoiceListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/packModel/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/packModel/Invoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/packServices/InvoiceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/packServices/InvoiceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packController/InvoiceAddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packController/InvoiceAddServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packController/InvoiceListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packController/InvoiceListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packModel/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packModel/Invoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packServices/InvoiceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/WEB-INF/classes/packServices/InvoiceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/invoice-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/invoice-add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/invoice-jsp2/invoice-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/invoice-jsp2/invoice-list.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +22,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/invoice-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+            <state relative-caret-position="113">
+              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -211,7 +193,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569373957867" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569426776639" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../84" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -233,6 +215,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -317,7 +300,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569013902730</updated>
-      <workItem from="1569013906713" duration="84347000" />
+      <workItem from="1569013906713" duration="86074000" />
     </task>
     <task id="LOCAL-00001" summary="21.09.2019 03:58">
       <created>1569031145479</created>
@@ -361,11 +344,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569344298865</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="25.09.2019 03:13 nawiasy!!!">
+      <created>1569374014974</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569374014975</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84347000" />
+    <option name="totallyTimeSpent" value="86074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -378,7 +368,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -484,7 +473,8 @@
     <MESSAGE value="24.09.2019 01:04" />
     <MESSAGE value="24.09.2019 02:48" />
     <MESSAGE value="24.09.2019 18:57" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.09.2019 18:57" />
+    <MESSAGE value="25.09.2019 03:13 nawiasy!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="25.09.2019 03:13 nawiasy!!!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/packController/HalloServlet.java">
@@ -731,8 +721,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/invoice-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+        <state relative-caret-position="113">
+          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -14,6 +14,10 @@
 <body>
 <jsp:include page="/navigator.jsp"></jsp:include>
 
+<br/>
+<h3>Invoices not paid</h3>
+<br/>
+
 <table style="width: 100%">
     <tr>
         <th>Id.</th>
@@ -72,9 +76,26 @@
             </td>
         </tr>
     </c:forEach>
+</table>
     <br/>
-    <h2>???</h2>
+    <h3>Invoices paid</h3>
     <br/>
+<table style="width: 100%">
+
+    <tr>
+        <th>Id.</th>
+        <th>Date of creation</th>
+        <th>Client name</th>
+        <th>If paid</th>
+        <th>Date of release</th>
+        <th>Date of payment</th>
+        <th>Bill value</th>
+        <th>Client NIP</th>
+        <th>Client Address</th>
+        <th>Number of products</th>
+        <th></th>
+    </tr>
+
     <c:forEach var="invoice" items="${requestScope.lista_invoices_oplaconych_z_bazy_danych}">
         <tr>
             <td>${invoice.getId()}</td>
