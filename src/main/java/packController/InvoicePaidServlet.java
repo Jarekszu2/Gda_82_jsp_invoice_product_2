@@ -49,7 +49,7 @@ public class InvoicePaidServlet extends HttpServlet {
         LocalDateTime localDateTime = LocalDateTime.parse(req.getParameter("invoice_dateOfRelease"));
         LocalDateTime localDateTime2 = LocalDateTime.parse(req.getParameter("invoice_dateOfCreation"));
         String invoice_clientName = req.getParameter("invoice_clientName");
-        int invoice_clientNip = Integer.parseInt(req.getParameter("invoice_clientNip"));
+        String invoice_clientNip = req.getParameter("invoice_clientNip");
         String invoice_clientAddress = req.getParameter("invoice_clientAddress");
         String stringIsPaid = req.getParameter("invoice_if_paid");
         boolean isPaid = (stringIsPaid != null && req.getParameter("invoice_if_paid").equalsIgnoreCase("on"));

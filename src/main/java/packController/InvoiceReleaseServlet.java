@@ -48,7 +48,7 @@ public class InvoiceReleaseServlet extends HttpServlet {
         LocalDateTime localDateTime = LocalDateTime.parse(req.getParameter("invoice_dateOfRelease"));
         LocalDateTime localDateTime2 = LocalDateTime.parse(req.getParameter("invoice_dateOfCreation"));
         String invoice_clientName = req.getParameter("invoice_clientName");
-        int invoice_clientNip = Integer.parseInt(req.getParameter("invoice_clientNip"));
+        String invoice_clientNip = req.getParameter("invoice_clientNip");
         String invoice_clientAddress = req.getParameter("invoice_clientAddress");
 
         Invoice invoice = new Invoice(invoice_id, localDateTime2, invoice_clientName, invoice_clientNip, invoice_clientAddress, localDateTime);

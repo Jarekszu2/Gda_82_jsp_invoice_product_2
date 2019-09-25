@@ -37,7 +37,7 @@
     Product stock: <input type="number" name="product_stock" value="${requestScope.productStock}">
     <br/>
     <br/>
-    Invoice id: <input type="number" name="invoice_id" value="${requestScope.productInvoiceId}">
+    <input type="hidden" name="invoice_id" value="${requestScope.productInvoiceId}">
     <br/>
     <br/>
     <input type="submit"><%--Guzik 'prześlij'--%>

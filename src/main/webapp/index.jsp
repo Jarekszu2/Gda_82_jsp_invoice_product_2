@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<h2>Hallo World!</h2>
+<h2>Manager invoives</h2>
 <jsp:include page="/navigator.jsp"></jsp:include>
 </body>
 </html>

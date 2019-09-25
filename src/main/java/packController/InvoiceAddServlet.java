@@ -27,7 +27,7 @@ public class InvoiceAddServlet extends HttpServlet {
 
         // pobieramy dane z invoice-add.jsp
         String invoice_clientName = req.getParameter("invoice_clientName");
-        int invoice_clientNip = Integer.parseInt(req.getParameter("invoice_clientNip"));
+        String invoice_clientNip = req.getParameter("invoice_clientNip");
         String invoice_clientAddress = req.getParameter("invoice_clientAddress");
 
         // zapisujemy dane do bazy danych

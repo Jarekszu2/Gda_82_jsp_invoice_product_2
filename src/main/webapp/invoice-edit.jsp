@@ -19,7 +19,7 @@
     <br/>
     <input type="hidden" name="invoice_id" value="${requestScope.invoiceId}">
     <br/>
-    Client name: <input type="text" name="invoice_dateOfCreation" value="${requestScope.invoiceDateOfCreation}">
+    <input type="hidden" name="invoice_dateOfCreation" value="${requestScope.invoiceDateOfCreation}">
     <br/>
     <br/>
     Client name: <input type="text" name="invoice_clientName" value="${requestScope.clientName}">

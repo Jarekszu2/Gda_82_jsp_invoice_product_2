@@ -36,17 +36,20 @@ public class Invoice implements IbaseEntity {
     @Cascade(value = {org.hibernate.annotations.CascadeType.REMOVE})
     private List<Product> products;
     @Column(nullable = false, length = 10)
-    private int clientsNip;
+    private String clientsNip;
     @Column(nullable = false)
     private String clientsAddress;
+//    @Formula(value = "(products.size())")
+    @Formula(value = "(SELECT COUNT(*) from product p where p.invoice_id = id)")
+    private Integer numberOfProducts;
 
-    public Invoice(String clientName, int clientsNip, String clientsAddress) {
+    public Invoice(String clientName, String clientsNip, String clientsAddress) {
         this.clientName = clientName;
         this.clientsNip = clientsNip;
         this.clientsAddress = clientsAddress;
     }
 
-    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, boolean ifPaid, LocalDateTime dateOfRelease, LocalDateTime dateOfPayment, int clientsNip, String clientsAddress) {
+    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, boolean ifPaid, LocalDateTime dateOfRelease, LocalDateTime dateOfPayment, String clientsNip, String clientsAddress) {
         this.id = id;
         this.dateOfCreation = dateOfCreation;
         this.clientName = clientName;
@@ -62,7 +65,7 @@ public class Invoice implements IbaseEntity {
         this.dateOfRelease = dateOfRelease;
     }
 
-    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, int clientsNip, String clientsAddress) {
+    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, String clientsNip, String clientsAddress) {
         this.id = id;
         this.dateOfCreation = dateOfCreation;
         this.clientName = clientName;
@@ -70,7 +73,7 @@ public class Invoice implements IbaseEntity {
         this.clientsAddress = clientsAddress;
     }
 
-    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, int clientsNip, String clientsAddress, LocalDateTime dateOfRelease) {
+    public Invoice(Long id, LocalDateTime dateOfCreation, String clientName, String clientsNip, String clientsAddress, LocalDateTime dateOfRelease) {
         this.id = id;
         this.dateOfCreation = dateOfCreation;
         this.clientName = clientName;

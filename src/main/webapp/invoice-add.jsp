@@ -28,7 +28,7 @@
     Client name: <input type="text" name="invoice_clientName" value="${requestScope.clientName}">
     <br/>
     <br/>
-    Client NIP: <input type="number" minlength="10" maxlength="10" name="invoice_clientNip" value="${requestScope.clientNip}">
+    Client NIP: <input type="text" minlength="10" maxlength="10" name="invoice_clientNip" value="${requestScope.clientNip}">
     <br/>
     <br/>
     Client address: <input type="text" name="invoice_clientAddress" value="${requestScope.clientAddress}">

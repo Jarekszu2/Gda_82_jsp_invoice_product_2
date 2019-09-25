@@ -51,7 +51,7 @@ public class InvoiceEditServlet extends HttpServlet {
         Long invoice_id = Long.parseLong(req.getParameter("invoice_id"));
         LocalDateTime localDateTime = LocalDateTime.parse(req.getParameter("invoice_dateOfCreation"));
         String invoice_clientName = req.getParameter("invoice_clientName");
-        int invoice_clientNip = Integer.parseInt(req.getParameter("invoice_clientNip"));
+        String invoice_clientNip = req.getParameter("invoice_clientNip");
         String invoice_clientAddress = req.getParameter("invoice_clientAddress");
 
         Invoice invoice = new Invoice(invoice_id, localDateTime, invoice_clientName, invoice_clientNip, invoice_clientAddress);

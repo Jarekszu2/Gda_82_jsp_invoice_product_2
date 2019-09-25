@@ -25,10 +25,11 @@
         <th>Bill value</th>
         <th>Client NIP</th>
         <th>Client Address</th>
+        <th>Number of products</th>
         <th></th>
     </tr>
 
-    <c:forEach var="invoice" items="${requestScope.lista_invoices_z_bazy_danych}">
+    <c:forEach var="invoice" items="${requestScope.lista_invoices_nieoplaconych_z_bazy_danych}">
         <tr>
             <td>${invoice.getId()}</td>
             <%--<td>${invoice.getDateOfCreation()}</td>--%>
@@ -40,6 +41,7 @@
             <td>${invoice.getBillValue()}</td>
             <td>${invoice.getClientsNip()}</td>
             <td>${invoice.getClientsAddress()}</td>
+            <td>${invoice.getNumberOfProducts()}</td>
             <td>
                 <table>
                     <tr>
@@ -52,11 +54,13 @@
                         <td>
                             <a href="/invoice-release?invoiceId=${invoice.getId()}">Release invoice</a>
                         </td>
-                        if (${invoice.isIfPaid()} == false) {
+                        <%--{% if fname == null or fname == '' %}We're so glad you visited our store!{% else %}{{fname}}, thanks for visiting our store!{% endif %}--%>
+                        <%--{{% if (${invoice.isIfPaid()} == false) %}--%>
                         <td>
                             <a href="/invoice-paid?invoiceId=${invoice.getId()}">Paid invoice</a>
                         </td>
-                        }
+                        <%--{% endif %}}--%>
+
                         <td>
                             <a href="/product-list?invoiceId=${invoice.getId()}">List products</a>
                         </td>
@@ -68,6 +72,53 @@
             </td>
         </tr>
     </c:forEach>
+    <br/>
+    <h2>???</h2>
+    <br/>
+    <c:forEach var="invoice" items="${requestScope.lista_invoices_oplaconych_z_bazy_danych}">
+        <tr>
+            <td>${invoice.getId()}</td>
+                <%--<td>${invoice.getDateOfCreation()}</td>--%>
+            <td>${invoice.getDateOfCreation().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
+            <td>${invoice.getClientName()}</td>
+            <td>${invoice.isIfPaid()}</td>
+            <td>${invoice.getDateOfRelease().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
+            <td>${invoice.getDateOfPayment().format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm"))}</td>
+            <td>${invoice.getBillValue()}</td>
+            <td>${invoice.getClientsNip()}</td>
+            <td>${invoice.getClientsAddress()}</td>
+            <td>${invoice.getNumberOfProducts()}</td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="/invoice-delete?invoiceId=${invoice.getId()}">Delete invoice</a>
+                        </td>
+                        <%--<td>--%>
+                            <%--<a href="/invoice-edit?invoiceId=${invoice.getId()}">Edit invoice</a>--%>
+                        <%--</td>--%>
+                        <%--<td>--%>
+                            <%--<a href="/invoice-release?invoiceId=${invoice.getId()}">Release invoice</a>--%>
+                        <%--</td>--%>
+                            <%--{% if fname == null or fname == '' %}We're so glad you visited our store!{% else %}{{fname}}, thanks for visiting our store!{% endif %}--%>
+                        <%--{{% if (${invoice.isIfPaid()} == false) %}--%>
+                        <%--<td>--%>
+                            <%--<a href="/invoice-paid?invoiceId=${invoice.getId()}">Paid invoice</a>--%>
+                        <%--</td>--%>
+                        <%--{% endif %}}--%>
+
+                        <td>
+                            <a href="/product-list?invoiceId=${invoice.getId()}">List products</a>
+                        </td>
+                        <%--<td>--%>
+                            <%--<a href="/product-add?invoiceId=${invoice.getId()}">Add product</a>--%>
+                        <%--</td>--%>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </c:forEach>
+
 </table>
 </body>
 </html>
